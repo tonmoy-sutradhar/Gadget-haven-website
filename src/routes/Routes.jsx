@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import Statistics from "./../Pages/Statistics";
 import Dashboard from "./../Pages/Dashboard";
 import Banner from "../Components/Banner";
+import ProductCards from "../Components/ProductCards";
 
 const routes = createBrowserRouter([
   {
@@ -15,6 +16,13 @@ const routes = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("../categories.json"),
+
+        children: [
+          {
+            path: "/cards",
+            element: <ProductCards></ProductCards>,
+          },
+        ],
       },
       {
         path: "/Statistics",

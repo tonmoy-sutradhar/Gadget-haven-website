@@ -10,7 +10,7 @@ const Categories = ({ categories }) => {
 
       <div className="join join-vertical gap-3 border-2 border-purple-500 bg-white p-2 ">
         {categories.map((categoy) => (
-          <Link to="/card" key={categoy.category}>
+          <Link to="/cards" key={categoy.category}>
             <button className="btn rounded-full w-full bg-purple-500 text-white">
               {categoy.category}
             </button>
