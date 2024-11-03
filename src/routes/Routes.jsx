@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../Pages/Home";
 import Statistics from "./../Pages/Statistics";
 import Dashboard from "./../Pages/Dashboard";
+import Banner from "../Components/Banner";
 
 const routes = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        children: [],
       },
       {
         path: "/Statistics",
