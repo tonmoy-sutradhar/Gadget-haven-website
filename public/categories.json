@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "name": "All Product",
+    "category": "All Product",
     "slug": "all-product"
   },
   {
     "id": 2,
-    "name": "Laptops",
+    "category": "Laptops",
     "slug": "laptops"
   },
   {
     "id": 3,
-    "name": "Phones",
+    "category": "Phones",
     "slug": "phones"
   },
   {
     "id": 4,
-    "name": "Accessories",
+    "category": "Accessories",
     "slug": "accessories"
   },
   {
     "id": 5,
-    "name": "Smart Watches",
+    "category": "Smart Watches",
     "slug": "smart-watches"
   },
   {
     "id": 6,
-    "name": "MacBook",
+    "category": "MacBook",
     "slug": "macbook"
   },
   {
     "id": 7,
-    "name": "iPhone",
+    "category": "iPhone",
     "slug": "iphone"
   }
 ]
