@@ -1,18 +1,18 @@
 [
   {
     "id": 1,
-    "category": "All Product",
-    "slug": "all-product"
-  },
-  {
-    "id": 2,
     "category": "Laptops",
     "slug": "laptops"
   },
   {
+    "id": 2,
+    "category": "iPhone",
+    "slug": "iphone"
+  },
+  {
     "id": 3,
-    "category": "Phones",
-    "slug": "phones"
+    "category": "MacBook",
+    "slug": "macbook"
   },
   {
     "id": 4,
@@ -26,12 +26,7 @@
   },
   {
     "id": 6,
-    "category": "MacBook",
-    "slug": "macbook"
-  },
-  {
-    "id": 7,
-    "category": "iPhone",
-    "slug": "iphone"
+    "category": "Phones",
+    "slug": "phones"
   }
 ]

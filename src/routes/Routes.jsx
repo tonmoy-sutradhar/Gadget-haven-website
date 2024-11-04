@@ -3,8 +3,8 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../Pages/Home";
 import Statistics from "./../Pages/Statistics";
 import Dashboard from "./../Pages/Dashboard";
-import Banner from "../Components/Banner";
 import ProductCards from "../Components/ProductCards";
+import ProductDetails from "../Pages/ProductDetails";
 
 const routes = createBrowserRouter([
   {
@@ -19,8 +19,14 @@ const routes = createBrowserRouter([
 
         children: [
           {
-            path: "/cards",
+            path: "/",
             element: <ProductCards></ProductCards>,
+            loader: () => fetch("../products.json"),
+          },
+          {
+            path: "/cards/:category",
+            element: <ProductCards></ProductCards>,
+            loader: () => fetch("../products.json"),
           },
         ],
       },
@@ -31,6 +37,10 @@ const routes = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductDetails></ProductDetails>,
       },
     ],
   },
