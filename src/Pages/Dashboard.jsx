@@ -1,6 +1,15 @@
-import { Link, Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getAllFavorites } from "../LocalStorage";
+import Cart from "./../Components/Cart";
 
 const Dashboard = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const favorites = getAllFavorites();
+    setProducts(favorites);
+  }, []);
   return (
     <>
       <div className="bg-bannerTwo h-[200px] max-w-screen-2xl">
@@ -29,7 +38,12 @@ const Dashboard = () => {
 
       <div>
         <h1 className="text-purple-500 font-bold">Cart</h1>
-        <Outlet></Outlet>
+      </div>
+      <div className=" my-11">
+        {/* All products card --- {category} */}
+        {products.map((product) => (
+          <Cart key={product.id} product={product}></Cart>
+        ))}
       </div>
     </>
   );

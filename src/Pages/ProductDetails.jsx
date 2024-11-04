@@ -3,18 +3,19 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import { FcRating } from "react-icons/fc";
 import { MdAddShoppingCart } from "react-icons/md";
 import { GiSelfLove } from "react-icons/gi";
+import { addFavorite } from "../LocalStorage";
 
 const ProductDetails = () => {
   const data = useLoaderData();
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
     const singleProduct = data.find((product) => product.product_id == id);
     setProduct(singleProduct);
-    console.log(singleProduct);
+    // console.log(singleProduct);
   }, [data, id]);
 
   const {
@@ -28,6 +29,12 @@ const ProductDetails = () => {
     availability,
     rating,
   } = product || {};
+
+  // js file added..!
+
+  const handleFavorite = (product) => {
+    addFavorite(product);
+  };
 
   return (
     <>
@@ -72,8 +79,12 @@ const ProductDetails = () => {
               <p className="bg-gray-200 rounded-full px-1 ml-2">{rating}</p>
             </p>
             <div className="flex  items-center gap-3">
-              <Link to="/dashboard">
-                <button className="flex justify-center items-center gap-1 bg-purple-500 rounded-full text-white px-3 py-1">
+              {/* to="/dashboard" */}
+              <Link>
+                <button
+                  onClick={() => handleFavorite(product)}
+                  className="flex justify-center items-center gap-1 bg-purple-500 rounded-full text-white px-3 py-1"
+                >
                   Add to Card <MdAddShoppingCart></MdAddShoppingCart>
                 </button>
               </Link>

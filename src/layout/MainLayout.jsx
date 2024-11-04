@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-
+import { Toaster } from "react-hot-toast";
 const MainLayout = () => {
   return (
     <div>
@@ -9,14 +9,13 @@ const MainLayout = () => {
       <div className="h-16">
         <Navbar></Navbar>
       </div>
-
       {/* Dynamic section */}
       <div className="min-h-[calc(100vh-292px)] py-12 container mx-auto px-11">
         <Outlet></Outlet>
       </div>
-
       {/* Footer */}
       <Footer></Footer>
+      <Toaster></Toaster>
     </div>
   );
 };
