@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Categories = ({ categories }) => {
-  console.log(categories);
+  // console.log(categories);
   return (
     <div>
       {/* {categories.map((category) => (

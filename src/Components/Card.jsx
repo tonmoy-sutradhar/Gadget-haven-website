@@ -15,7 +15,7 @@ const Card = ({ product }) => {
   } = product || {};
 
   return (
-    <div className="border-2 border-purple-500 p-3 rounded-xl">
+    <div className="border-2 border-purple-500 p-3 rounded-xl shadow-lg shadow-purple-500">
       <img
         className=" w-full h-[400px] overflow-hidden"
         src={product_image}
@@ -30,8 +30,14 @@ const Card = ({ product }) => {
       >
         View Details
       </button>
+      {/* <Link to="/product/:id">
+        <button className="border-2 border-purple-500 rounded-full p-1 px-2 font-bold text-purple-600">
+          View Details
+        </button>
+      </Link> */}
     </div>
   );
 };
 
 export default Card;
+// onClick={() => navigate("/product/:id")}
