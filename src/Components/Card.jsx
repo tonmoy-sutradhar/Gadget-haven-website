@@ -25,16 +25,11 @@ const Card = ({ product }) => {
       <h1 className="text-xl font-bold">Name: {product_name}</h1>
       <p className="text-gray-500 font-semibold mb-2 mt-1">Price: ${price}</p>
       <button
-        className="border-2 border-purple-500 rounded-full p-1 px-2 font-bold text-purple-600"
+        className="border-2 border-purple-500 rounded-full p-1 px-2 font-bold text-purple-600 "
         onClick={() => navigate(`/product/${product_id}`)}
       >
         View Details
       </button>
-      {/* <Link to="/product/:id">
-        <button className="border-2 border-purple-500 rounded-full p-1 px-2 font-bold text-purple-600">
-          View Details
-        </button>
-      </Link> */}
     </div>
   );
 };

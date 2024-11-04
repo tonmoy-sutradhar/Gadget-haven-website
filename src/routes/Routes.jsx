@@ -5,6 +5,7 @@ import Statistics from "./../Pages/Statistics";
 import Dashboard from "./../Pages/Dashboard";
 import ProductCards from "../Components/ProductCards";
 import ProductDetails from "../Pages/ProductDetails";
+import Cart from "../Components/Cart";
 
 const routes = createBrowserRouter([
   {
@@ -37,6 +38,13 @@ const routes = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
+
+        children: [
+          {
+            path: "/dashboard",
+            element: <Cart></Cart>,
+          },
+        ],
       },
       {
         // path: "/product/:id",

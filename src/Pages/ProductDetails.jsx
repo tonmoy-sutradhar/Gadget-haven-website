@@ -69,7 +69,7 @@ const ProductDetails = () => {
               <FcRating></FcRating>
               <FcRating></FcRating>
               <FcRating></FcRating>
-              <p className="bg-gray-200 rounded-full px-1 ml-2">5.00</p>
+              <p className="bg-gray-200 rounded-full px-1 ml-2">{rating}</p>
             </p>
             <div className="flex  items-center gap-3">
               <Link to="/dashboard">

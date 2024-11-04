@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { GiSelfLove } from "react-icons/gi";
 
@@ -27,9 +27,36 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-white"
           >
-            <Link to="/">Home</Link>
-            <Link to="/statistics">Statistics</Link>
-            <Link to="/dashboard">Dashboard</Link>
+            <NavLink
+              className={({ isActive }) =>
+                `font-bold ${
+                  isActive ? "text-purple-800 " : "hover:text-purple-800"
+                }`
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `font-bold ${
+                  isActive ? "text-purple-800 " : "hover:text-purple-800"
+                }`
+              }
+              to="/statistics"
+            >
+              Statistics
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `font-bold ${
+                  isActive ? "text-purple-800 " : "hover:text-purple-800"
+                }`
+              }
+              to="/dashboard"
+            >
+              Dashboard
+            </NavLink>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost text-xl text-white">
@@ -38,16 +65,49 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-10 font-bold text-white">
-          <Link to="/">Home</Link>
-          <Link to="/statistics">Statistics</Link>
-          <Link to="/dashboard">Dashboard</Link>
+          <NavLink
+            className={({ isActive }) =>
+              `font-bold ${
+                isActive ? "text-purple-800 " : "hover:text-purple-800"
+              }`
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `font-bold ${
+                isActive ? "text-purple-800 " : "hover:text-purple-800"
+              }`
+            }
+            to="/statistics"
+          >
+            Statistics
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `font-bold ${
+                isActive ? "text-purple-800 " : "hover:text-purple-800"
+              }`
+            }
+            to="/dashboard"
+          >
+            Dashboard
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end gap-5 text-xl ">
-        <Link to="cart" className="bg-white rounded-full items-center p-2">
+        <Link
+          to="cart"
+          className="bg-white rounded-full items-center p-2 border-2 border-purple-300 "
+        >
           <FaShoppingCart></FaShoppingCart>
         </Link>
-        <Link to="love" className="bg-white rounded-full items-center p-2">
+        <Link
+          to="love"
+          className="bg-white rounded-full items-center p-2 border-2 border-purple-300 "
+        >
           <GiSelfLove></GiSelfLove>
         </Link>
       </div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Categories = ({ categories }) => {
   // console.log(categories);
@@ -9,11 +9,21 @@ const Categories = ({ categories }) => {
       ))} */}
       <div className="join join-vertical gap-3 border-2 border-purple-500 bg-white p-2 ">
         {categories.map((categoy) => (
-          <Link to={`cards/${categoy.category}`} key={categoy.category}>
-            <button className="btn rounded-full w-full bg-purple-500 text-white">
+          <NavLink
+            className={({ isActive }) =>
+              `font-bold ${
+                isActive
+                  ? " btn-primary text-white rounded-full bg-purple-200 "
+                  : "hover: rounded-full"
+              }`
+            }
+            to={`cards/${categoy.category}`}
+            key={categoy.category}
+          >
+            <button className="btn w-full rounded-full    ">
               {categoy.category}
             </button>
-          </Link>
+          </NavLink>
         ))}
       </div>
     </div>
