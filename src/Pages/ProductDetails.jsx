@@ -38,7 +38,7 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div className="bg-bannerTwo h-[400px] rounded-xl">
+      <div className="bg-bannerTwo h-[400px] rounded-xl mt-8">
         <h1 className="text-5xl text-white font-bold text-center pt-16 ">
           Product Details
         </h1>
@@ -47,21 +47,33 @@ const ProductDetails = () => {
           level. From smart devices to the coolest accessories, we have it all!
         </p>
       </div>
-      <div className="hero bg-white min-h-[300px] w-4/6 mx-auto relative -top-52 rounded-xl border-b-white border-8 border-purple-400">
+      <div className="hero bg-white min-h-[300px] w-4/6 mx-auto relative -top-52 rounded-xl  border-8 border-white-500">
         <div className="hero-content flex-col lg:flex-row">
           <img
             src={product_image}
-            className="max-w-sm rounded-lg shadow-2xl shadow-purple-500 min-h-[400px] shadow-inner"
+            className="max-w-sm rounded-lg shadow-inner shadow-purple-500 min-h-[400px] "
           />
           <div>
             <h1 className="text-3xl font-bold">{product_name}</h1>
-            <p className="text-xl font-semibold text-gray-500 ">
+            <p className="text-xl font-semibold text-gray-500 mb-1">
               Price: $ {price}
             </p>
-            <p className="border-2 border-green-500 rounded-full px-3 text-green-500 w-24 text-center bg-green-100">
+
+            {/* <p className="border-2 border-green-500 rounded-full px-3 text-green-500 w-[150px] text-center bg-green-100">
+              {availability ? "In stock" : "Out of stock"}
+            </p> */}
+
+            <p
+              className={`border-2 rounded-full px-3 mb-1 w-[150px] text-center ${
+                availability
+                  ? "border-green-500 text-green-500 bg-green-100"
+                  : "border-red-500 text-red-500 bg-red-100"
+              }`}
+            >
               {availability ? "In stock" : "Out of stock"}
             </p>
-            <p className="font-thin text-gray-500">{description}</p>
+
+            <p className="font-thin text-gray-500 mb-1">{description}</p>
             <h1 className="text-xl font-bold">Specification:</h1>
             <ol className="text-gray-500">
               {specification &&
@@ -69,7 +81,7 @@ const ProductDetails = () => {
                   <li key={index}>{`${index + 1}. ${item}`}</li>
                 ))}
             </ol>
-            <h1 className="text-xl font-bold">Rating:</h1>
+            <h1 className="text-xl font-bold mt-1">Rating:</h1>
             <p className="flex items-center gap-1">
               <FcRating></FcRating>
               <FcRating></FcRating>
@@ -78,7 +90,7 @@ const ProductDetails = () => {
               <FcRating></FcRating>
               <p className="bg-gray-200 rounded-full px-1 ml-2">{rating}</p>
             </p>
-            <div className="flex  items-center gap-3">
+            <div className="flex  items-center gap-3 mt-3">
               {/* to="/dashboard" */}
               <Link>
                 <button
