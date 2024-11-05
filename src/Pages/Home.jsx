@@ -9,11 +9,17 @@ const Home = () => {
       {/* Banner section */}
       <Banner></Banner>
 
-      {/* Categories Button section */}
-      <Categories categories={data}></Categories>
+      <div className="grid lg:grid-cols-7 md:grid-cols-1">
+        {/* Categories Button section */}
+        <div className="col-span-1">
+          <Categories categories={data}></Categories>
+        </div>
 
-      {/* Dynamic data Section */}
-      <Outlet></Outlet>
+        {/* Dynamic data Section */}
+        <div className="col-span-6 w-full mr-32">
+          <Outlet></Outlet>
+        </div>
+      </div>
     </div>
   );
 };

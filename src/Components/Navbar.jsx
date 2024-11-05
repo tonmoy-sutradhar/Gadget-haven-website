@@ -13,7 +13,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar backdrop-blur-xl bg-purple-500 z-50 fixed px-14  ">
+    <div className="navbar backdrop-blur-xl bg-purple-500 z-50 fixed px-14 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -109,9 +109,12 @@ const Navbar = () => {
       <div className="navbar-end gap-5 text-xl ">
         <Link
           to="cart"
-          className="bg-white rounded-full items-center p-2 border-2 border-purple-300 flex gap-3 "
+          className="bg-white rounded-full items-center p-2 border-2 border-purple-300  gap-3 "
         >
-          <FaShoppingCart></FaShoppingCart> <span>{products.length}</span>
+          <FaShoppingCart></FaShoppingCart>{" "}
+          <span className="absolute -top-1 ml-5 text-white">
+            {products.length}
+          </span>
         </Link>
         <Link
           to="love"

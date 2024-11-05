@@ -8,7 +8,7 @@ const Categories = ({ categories }) => {
         <Link key={category.id}></Link>
       ))} */}
 
-      <div className="join join-vertical gap-3 border-2 border-purple-500 bg-white p-2 ">
+      <div className="join join-vertical gap-3 border-2 border-gray-200 bg-white p-2 mt-11">
         {categories.map((categoy) => (
           <NavLink
             className={({ isActive }) =>
@@ -21,7 +21,7 @@ const Categories = ({ categories }) => {
             to={`cards/${categoy.category}`}
             key={categoy.category}
           >
-            <button className="btn w-full rounded-full    ">
+            <button className="btn w-full rounded-full text-purple-500    ">
               {categoy.category}
             </button>
           </NavLink>

@@ -1,9 +1,18 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { getAllFavorites, removeFavorite } from "../LocalStorage";
 import Cart from "./../Components/Cart";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+  let location = useLocation();
+  useEffect(() => {
+    console.log(location);
+    if (location.pathname === "/dashboard") {
+      navigate("Cart", { replace: true });
+    }
+  }, [location, navigate]);
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -16,9 +25,17 @@ const Dashboard = () => {
     const favorites = getAllFavorites();
     setProducts(favorites);
   };
+
+  // const [p, setP] = useState(products);
+  // const handleSort = (sortBy) => {
+  //   if (sortBy === "price") {
+  //     const sorted = [...products].sort((a, b) => b.price - a.price);
+  //     setP(sorted);
+  //   }
+  // };
   return (
     <>
-      <div className="bg-bannerTwo h-[200px] max-w-screen-2xl">
+      <div className="bg-bannerTwo h-[200px] max-w-screen-2xl mt-8">
         <h1 className="text-5xl text-white font-bold text-center pt-5 ">
           Dashboard
         </h1>
@@ -42,9 +59,27 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* <div>
-        <h1 className="text-purple-500 font-bold">Cart</h1>
-      </div> */}
+      {/* ////////////////////////////////////////////// */}
+
+      <div className="flex justify-between items-center mt-4">
+        <div>
+          <h1 className="text-2xl font-bold text-purple-500">Cart</h1>
+        </div>
+        <div>
+          <button
+            // onClick={() => handleSort(price)}
+            className="btn border-2 border-purple-500 text-purple-500 bg-white rounded-full"
+          >
+            Sort by price
+          </button>
+          <button className="btn border-2 border-purple-500 rounded-full bg-white text-purple-500 ml-3">
+            Purchase
+          </button>
+        </div>
+      </div>
+
+      {/* ///////////////////////////////////////////////// */}
+
       <div className=" my-11">
         {/* All products card --- {category} */}
         {products.map((product) => (
