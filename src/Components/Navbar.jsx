@@ -66,6 +66,16 @@ const Navbar = () => {
             >
               Dashboard
             </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `font-bold ${
+                  isActive ? "text-purple-800 " : "hover:text-purple-800"
+                }`
+              }
+              to="/about"
+            >
+              About
+            </NavLink>
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost text-xl text-white">
@@ -104,11 +114,21 @@ const Navbar = () => {
           >
             Dashboard
           </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `font-bold ${
+                isActive ? "text-purple-800 " : "hover:text-purple-800"
+              }`
+            }
+            to="/about"
+          >
+            About
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end gap-5 text-xl ">
         <Link
-          to="cart"
+          to="/dashboard"
           className="bg-white rounded-full items-center p-2 border-2 border-purple-300  gap-3 "
         >
           <FaShoppingCart></FaShoppingCart>{" "}
@@ -117,7 +137,7 @@ const Navbar = () => {
           </span>
         </Link>
         <Link
-          to="love"
+          to="/dashboard"
           className="bg-white rounded-full items-center p-2 border-2 border-purple-300 "
         >
           <GiSelfLove></GiSelfLove>

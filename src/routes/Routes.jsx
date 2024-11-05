@@ -8,6 +8,7 @@ import ProductDetails from "../Pages/ProductDetails";
 import Cart from "../Components/Cart";
 import Wishlist from "../Components/Wishlist";
 import Error from "../Components/Error";
+import About from "../Pages/About";
 
 const routes = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const routes = createBrowserRouter([
         element: <Statistics></Statistics>,
       },
       {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
 
@@ -53,6 +58,7 @@ const routes = createBrowserRouter([
           },
         ],
       },
+
       {
         // path: "/product/:id",
         path: "/product/:id",

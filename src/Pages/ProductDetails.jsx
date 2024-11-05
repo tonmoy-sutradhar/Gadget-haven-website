@@ -59,10 +59,6 @@ const ProductDetails = () => {
               Price: $ {price}
             </p>
 
-            {/* <p className="border-2 border-green-500 rounded-full px-3 text-green-500 w-[150px] text-center bg-green-100">
-              {availability ? "In stock" : "Out of stock"}
-            </p> */}
-
             <p
               className={`border-2 rounded-full px-3 mb-1 w-[150px] text-center ${
                 availability

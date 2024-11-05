@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./banner/banner.css";
 const Banner = () => {
   return (
@@ -12,9 +13,11 @@ const Banner = () => {
           it all!
         </p>
         <div className="text-center pt-4">
-          <button className="btn text-purple-500 bg-white rounded-full font-bold">
-            Shop Now
-          </button>
+          <Link to="/dashboard">
+            <button className="btn text-purple-500 bg-white rounded-full font-bold">
+              Shop Now
+            </button>
+          </Link>
         </div>
       </div>
       <div className="hero bg-banner min-h-[400px] md:min-h-[300px] w-4/6 mx-auto relative -top-20 rounded-xl  border-8 border-white-500"></div>
