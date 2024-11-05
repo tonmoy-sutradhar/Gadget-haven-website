@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getAllFavorites } from "../LocalStorage";
+import { Link, Outlet } from "react-router-dom";
+import { getAllFavorites, removeFavorite } from "../LocalStorage";
 import Cart from "./../Components/Cart";
 
 const Dashboard = () => {
@@ -10,6 +10,12 @@ const Dashboard = () => {
     const favorites = getAllFavorites();
     setProducts(favorites);
   }, []);
+
+  const handleRemove = (id) => {
+    removeFavorite(id);
+    const favorites = getAllFavorites();
+    setProducts(favorites);
+  };
   return (
     <>
       <div className="bg-bannerTwo h-[200px] max-w-screen-2xl">
@@ -23,12 +29,12 @@ const Dashboard = () => {
         </p>
 
         <div className="flex items-center justify-center gap-3 mt-3">
-          <Link>
+          <Link to="/dashboard/Cart">
             <button className="bg-white text-purple-600 rounded-full px-3 py-1 border-2 border-white font-bold ">
               Cart
             </button>
           </Link>
-          <Link>
+          <Link to="/dashboard/whishlist">
             <button className="bg-white text-purple-600 rounded-full px-3 py-1 border-2 border-white font-bold ">
               Wishlist
             </button>
@@ -36,15 +42,21 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <h1 className="text-purple-500 font-bold">Cart</h1>
-      </div>
+      </div> */}
       <div className=" my-11">
         {/* All products card --- {category} */}
         {products.map((product) => (
-          <Cart key={product.id} product={product}></Cart>
+          <Cart
+            handleRemove={handleRemove}
+            key={product.id}
+            product={product}
+          ></Cart>
         ))}
       </div>
+
+      {/* <Outlet></Outlet> */}
     </>
   );
 };

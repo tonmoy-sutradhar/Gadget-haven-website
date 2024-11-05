@@ -1,8 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { GiSelfLove } from "react-icons/gi";
+import { useEffect, useState } from "react";
+import { getAllFavorites } from "../LocalStorage";
 
 const Navbar = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const favorites = getAllFavorites();
+    setProducts(favorites);
+  }, []);
+
   return (
     <div className="navbar backdrop-blur-xl bg-purple-500 z-50 fixed px-14  ">
       <div className="navbar-start">
@@ -100,9 +109,9 @@ const Navbar = () => {
       <div className="navbar-end gap-5 text-xl ">
         <Link
           to="cart"
-          className="bg-white rounded-full items-center p-2 border-2 border-purple-300 "
+          className="bg-white rounded-full items-center p-2 border-2 border-purple-300 flex gap-3 "
         >
-          <FaShoppingCart></FaShoppingCart>
+          <FaShoppingCart></FaShoppingCart> <span>{products.length}</span>
         </Link>
         <Link
           to="love"

@@ -14,21 +14,31 @@ const getAllFavorites = () => {
 };
 
 // add a product to local storage
+
 const addFavorite = (product) => {
-  // console.log(product);
   const favorites = getAllFavorites();
   const isExist = favorites.find(
     (item) => item.product_id == product.product_id
   );
-  if (isExist) return alert("Product Already Exist !!");
-  // if (isExist) return toast.error("Product Already Exist !!");
-  favorites.push(product);
 
+  if (isExist) {
+    return toast.warning("Product Already Exist !!");
+  }
+
+  favorites.push(product);
   localStorage.setItem("favorites", JSON.stringify(favorites));
-  alert("Successfully add a product");
-  // toast.success("Successfully Add a Product !");
+  toast.success("Successfully Add a Product !");
 };
 
 // remove a product form local storage
 
-export { addFavorite, getAllFavorites };
+const removeFavorite = (id) => {
+  // get all previsosly data
+  const favorites = getAllFavorites();
+  const remaining = favorites.filter((item) => item.product_id != id);
+
+  localStorage.setItem("favorites", JSON.stringify(remaining));
+  toast.success("Successfully Remove a Product !");
+};
+
+export { addFavorite, getAllFavorites, removeFavorite };

@@ -1,4 +1,5 @@
-const cart = ({ product }) => {
+import { MdDelete } from "react-icons/md";
+const cart = ({ product, handleRemove }) => {
   const {
     product_id,
     product_name,
@@ -21,7 +22,12 @@ const cart = ({ product }) => {
           <p>{description}</p>
           <p>{price}</p>
         </div>
-        <button className="text-red-500 btn btn-warning"> delete</button>
+        <button
+          onClick={() => handleRemove(product.product_id)}
+          className="text-red-500 text-4xl"
+        >
+          <MdDelete></MdDelete>
+        </button>
       </div>
     </>
   );

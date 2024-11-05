@@ -7,6 +7,7 @@ const Categories = ({ categories }) => {
       {/* {categories.map((category) => (
         <Link key={category.id}></Link>
       ))} */}
+
       <div className="join join-vertical gap-3 border-2 border-purple-500 bg-white p-2 ">
         {categories.map((categoy) => (
           <NavLink

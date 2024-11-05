@@ -6,6 +6,7 @@ import Dashboard from "./../Pages/Dashboard";
 import ProductCards from "../Components/ProductCards";
 import ProductDetails from "../Pages/ProductDetails";
 import Cart from "../Components/Cart";
+import Wishlist from "../Components/Wishlist";
 
 const routes = createBrowserRouter([
   {
@@ -41,8 +42,12 @@ const routes = createBrowserRouter([
 
         children: [
           {
-            path: "/dashboard",
+            path: "/dashboard/Cart",
             element: <Cart></Cart>,
+          },
+          {
+            path: "/dashboard/whishlist",
+            element: <Wishlist></Wishlist>,
           },
         ],
       },
