@@ -28,6 +28,7 @@ const Banner = () => {
           alt="banner"
         />
       </div>
+
       {/* <div className="hero  min-h-[200px] md:min-h-[300px] w-4/5  mx-auto relative -top-20 rounded-xl  border-8 border-white-500">
         <img src={banner} alt="banner" />
       </div> */}

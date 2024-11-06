@@ -26,13 +26,13 @@ const Dashboard = () => {
     setProducts(favorites);
   };
 
-  // const [p, setP] = useState(products);
-  // const handleSort = (sortBy) => {
-  //   if (sortBy === "price") {
-  //     const sorted = [...products].sort((a, b) => b.price - a.price);
-  //     setP(sorted);
-  //   }
-  // };
+  const [data, setData] = useState(products);
+  const handleSort = (sortBy) => {
+    if (sortBy === "price") {
+      const sorted = [...products].sort((a, b) => b.price - a.price);
+      setData(sorted);
+    }
+  };
   return (
     <>
       <div className="bg-bannerTwo h-[200px] max-w-screen-2xl mt-8">
@@ -67,7 +67,7 @@ const Dashboard = () => {
         </div>
         <div>
           <button
-            // onClick={() => handleSort(price)}
+            onClick={() => handleSort(price)}
             className="btn border-2 border-purple-500 text-purple-500 bg-white rounded-full"
           >
             Sort by price
