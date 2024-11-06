@@ -97,7 +97,7 @@ const ProductDetails = () => {
                 </button>
               </Link>
 
-              <Link to="/love">
+              <Link to="">
                 <button className="bg-gray-100 border-2 rounded-full p-2">
                   <GiSelfLove></GiSelfLove>
                 </button>
