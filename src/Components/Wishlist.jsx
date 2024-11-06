@@ -12,6 +12,7 @@ const Wishlist = ({ product, handleRemove }) => {
     rating,
   } = product || {};
 
+  // add product in cart
   const handleFavorite = (product) => {
     addFavorite(product);
   };
