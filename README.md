@@ -8,7 +8,7 @@ Visit Gadget Haven
 
 # Project Requirements
 
-Requirement Document
+https://github.com/programming-hero-web-course2/b10a8-gadget-heaven-tonmoy-sutradhar/blob/main/src/assets/File.pdf/Batch-10_Assignment-08.pdf
 
 # Key Concepts and Tools Used
 
