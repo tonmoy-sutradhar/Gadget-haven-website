@@ -1,3 +1,5 @@
+![Uploading banner.jpg…]()
+
 # Gadget Haven
 
 Gadget Haven is an e-commerce website for tech gadgets, built with React.js, leveraging local storage for data handling. This README provides an overview, links, and project details.
@@ -13,8 +15,8 @@ https://github.com/programming-hero-web-course2/b10a8-gadget-heaven-tonmoy-sutra
 # Key Concepts and Tools Used
 
 React Fundamentals:
-Components, Props, State, JSX, Event Handling, and Lifecycle Methods
-Data Management: Data handling is done with Local Storage for persistence across sessions.
+Components, Props, State, Event Handling, useLocation, useState, Navigate, useNavigate etc
+Data Management: Data handling is done with Local Storage.
 
 # Features
 
