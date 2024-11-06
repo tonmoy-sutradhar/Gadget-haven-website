@@ -1,4 +1,4 @@
-![Uploading banner.jpg…]()
+![banner](https://github.com/user-attachments/assets/8b611c35-4c92-487d-98e6-91b74dd30679)
 
 # Gadget Haven
 
